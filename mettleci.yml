@@ -1,0 +1,64 @@
+---
+single_vm:
+  count: 1
+  service: atlassian
+  project: mettleci
+  environment: example 
+  disks:
+    disk0:
+      size: 100
+#    disk1:
+#      shared: false
+#      size: 5
+
+# # Static IP for both network adapters. Only use when necessary, as this requires coordinated IP selection
+# single_vm_staticip:
+#   count: 1
+#   service: base-server
+#   project: template
+#   environment: example 
+#   disks:
+#     disk0:
+#       size: 50
+#     disk1:
+#       shared: false
+#       size: 5
+#   network:
+#     public_network_hostnum: 46
+#     private_network_hostnum: 46
+
+# AVAILABLE OVERRIDES FROM BASE-SERVER
+# packer:
+#   template_user:
+#   template_password:
+# network:
+#   private_network_iface:
+
+# AVAILABLE OVERRIDES FROM BASE-CENTOS
+# cpus: 1
+# memory: 1024
+# count: 1
+# environment:
+# disks:
+#   disk0:
+#     size: 32768
+# vsphere:
+#   datastore:
+#   datacenter:
+#   resource_pool:
+#   template_name:
+#   datastore:
+# network:
+#   public_network_name:
+#   private_network_name:
+#   domain:
+#   dns_server_list:
+#### Network hostnum is added to network CIDR when calculating static IP.
+#### hostnum 1 is reserved to encode "not set"
+#   public_network_hostnum: 45
+#   private_network_hostnum: 45
+#   public_network_mask: 24
+#   public_network_cidr: 192.168.40.0/24
+#   private_network_cidr: 192.168.40.0/24
+#   private_network_mask: 24
+#   gateway: 192.168.40.1
